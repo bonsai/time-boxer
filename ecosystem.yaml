@@ -1,0 +1,23 @@
+ecosystem:
+  id: planning-time
+  version: "0.1"
+  role: time-interface
+  responsibility:
+    - convert plan into 15-minute kits
+    - provide editable UI
+    - sync time boxes with Google Calendar
+  unit:
+    name: time-kit
+    duration_min: 15
+  input:
+    - plan
+    - tasks
+  output:
+    - time_kits
+    - calendar_events
+  upstream:
+    - bonsai/plan-editor
+  downstream:
+    - bonsai/weekly-scheduler
+    - bonsai/workflow
+  principle: thin interface; planning intelligence belongs to plan-editor
