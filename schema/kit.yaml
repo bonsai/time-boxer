@@ -1,0 +1,32 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://github.com/bonsai/time-boxer/schema/kit.yaml
+
+title: Time Boxer 15-minute Kit
+
+description: A minimal executable planning unit predicted from recap history.
+
+type: object
+required:
+  - id
+  - duration
+  - task
+  - action
+  - output
+properties:
+  id:
+    type: string
+  duration:
+    const: 15m
+  task:
+    type: string
+  action:
+    type: string
+  output:
+    type: string
+  reason:
+    type: string
+  confidence:
+    type: string
+    enum: [low, medium, high]
+  source:
+    type: string
